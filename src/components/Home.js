@@ -1,15 +1,14 @@
-import React, { useContext }from 'react'
-import UserInfoList from './UserInfoList'
-import {DataContext} from '../DataContext'
-
+import React, { useContext } from 'react';
+import UserInfoList from './UserInfoList';
+import { DataContext } from '../DataContext';
 
 function Home() {
-    const [data, setData] = useContext(DataContext)
+    const [data] = useContext(DataContext);
     return (
-       <div>
-         {!data.length ? <h4>Loading...</h4> : <UserInfoList data={data}/>}
-       </div>
-    )
+        <div>
+            {data.length ? <UserInfoList data={data} /> : <h4>Loading...</h4> }
+        </div>
+    );
 }
 
-export default Home
+export default Home;

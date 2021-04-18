@@ -1,9 +1,9 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import { CardContent, Typography, Box, Link, Button } from '@material-ui/core';
+import { CardContent, Typography, Box, Link } from '@material-ui/core';
 import Avatar from '@material-ui/core/Avatar';
-import { Link as RouterLink } from 'react-router-dom';
+import ButtonMoreDetails from './ButtonMoreDetails'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -24,10 +24,6 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center',
     },
 
-    button: {
-        marginTop: '30px',
-        padding: '10px 40px'
-    }
 }));
 
 function UserInfoItem({ user }) {
@@ -37,22 +33,17 @@ function UserInfoItem({ user }) {
         <Card className={classes.root}>
             <Avatar className={classes.large}>{user.name.charAt(0)}</Avatar>
             <CardContent className={classes.content}>
-                <Typography gutterBottom variant="h5" component="h2">
+                <Typography gutterBottom variant='h5' component='h2'>
                     {user.name}
                 </Typography>
-                <Typography variant="body2" color="textSecondary" component="p" >
-                    <Box fontStyle="italic" m={1}> @{user.username} </Box>
+                <Typography variant='body2' color='textSecondary' component='div'>
+                    <Box fontStyle='italic' m={1}> @{user.username} </Box>
                     <Link m={1}> {user.email} </Link>
                 </Typography>
-                <RouterLink className="listOfUser_item" key={user.id} to={`/details/${user.id}/${user.name}`}>
-                    <Button variant="contained" color="primary" className={classes.button}>
-                        More detail
-                    </Button>
-                </RouterLink>
+                <ButtonMoreDetails user={user} />
             </CardContent>
-
         </Card>
     );
 }
 
-export default UserInfoItem
+export default UserInfoItem;

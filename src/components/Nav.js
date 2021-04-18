@@ -1,25 +1,23 @@
 import React from 'react';
 import { AppBar, Toolbar, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles({
     button_root: {
         color: 'white'
-    },
-}));
+    }
+});
 
-
-export default function SearchAppBar() {
+function Nav() {
     const classes = useStyles();
-
     return (
         <div className={classes.root}>
-            <AppBar position="static">
+            <AppBar position='static'>
                 <Toolbar>
                     <ul>
-                        <Link to='/' style={{ textDecoration: "none" }}>
-                            <Button classes={{root: classes.button_root}}>
+                        <Link to='/' style={{ textDecoration: 'none' }}>
+                            <Button classes={{ root: classes.button_root }}>
                                 Home
                             </Button>
                         </Link>
@@ -29,3 +27,5 @@ export default function SearchAppBar() {
         </div>
     );
 }
+
+export default Nav;

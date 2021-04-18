@@ -1,0 +1,17 @@
+.listOfUser {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;  
+}
+
+.listOfUser_item:hover{
+  transform: translateY(-10px);
+}
+
+.listOfUser_item{
+  margin: 1rem;
+  padding: 1rem;
+  transition: all 0.5s;
+  text-decoration: none
+}

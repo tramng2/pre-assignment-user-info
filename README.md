@@ -1,7 +1,7 @@
 # Introduction
 
-This project is the preassignment for Integrify React Pre-Assignment Full-Stack Course.
-This project is created by React, styled by Material UI library.
+This project is the pre-assignment for Integrify React Pre-Assignment Full-Stack Course. 
+This project is created by React, styled by the Material UI library.
 
 In the project directory, you can run:
 
